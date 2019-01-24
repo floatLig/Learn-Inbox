@@ -5,3 +5,4 @@
 - [Git-GitHub](https://github.com/floatLig/Learn-Inbox/blob/master/Git-GitHub.md "floatLig'blog of Git&GitHub")
 - [Ubuntu命令行功能（待完成）.md](Ubuntu命令行（待完成）.md)
 - [Ubuntu文件夹作用（待完成）.md](Ubuntu文件夹作用（待完成）.md)
+- [英文单词](英文单词.md)
