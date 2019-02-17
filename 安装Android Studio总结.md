@@ -1,6 +1,13 @@
 # 安装Android Studio
 ### 下载JDK，配置环境变量
-> [参考链接：JDK下载以及配置环境变量](https://www.cnblogs.com/liuhongfeng/p/4177568.html)
+> [参考链接：JDK下载以及配置环境变量](https://www.cnblogs.com/liuhongfeng/p/4177568.html)  
+- 知识补充： 
+
+		JDK：Java Development Kit 开发工具包 
+		
+		**环境变量**：一般是指在操作系统中用来指定操作系统“运行环境”的一些参数，例如在Path中，用户在使用DOS，
+		告诉操作系统程序名字而没有告诉操作系统完整路径的时候，操作系统除了会在当前的目录寻找之外，还会在
+		Path指定路径中寻找。环境变量的原理是把一个目录下有名字.exe的路径添加到系统变量Path中
 
 - 小技巧
 	
@@ -9,8 +16,8 @@
 
 - 需要配置的环境变量：
 
-		 JAVA_HOME
-		 Path（bin）
+		 JAVA_HOME （可大写可小写，但是是系统变量，推荐大写 || JDK中包含JRE的bin，因此可单独设置JAVA_HOME为JDK的路径地址）
+		 Path （bin包含可执行文件）
 		 CLASSPATH
 - 卸载注意
 
