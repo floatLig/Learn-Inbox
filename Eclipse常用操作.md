@@ -1,8 +1,8 @@
 # Eclipse常用操作
 
 - [Eclipse_thems的配置](#eclipse_thems的配置)
-- [eclipse字体更换](#eclipse字体更换)
-- [eclipse字体更换](#eclipse字体更换)
+- [Eclipse字体更换](#eclipse字体更换)
+- [Eclipse字体更换](#eclipse字体更换)
 
 ### Eclipse_thems的配置  
 
