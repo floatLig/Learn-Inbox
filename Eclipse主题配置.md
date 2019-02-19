@@ -1,3 +1,5 @@
+# Eclipse常用操作
+
 ### Eclipse thems的配置  
 >   
 
@@ -13,3 +15,14 @@
 
 	![](https://github.com/floatLig/Learn-Inbox/blob/master/media/Eclipse%E4%B8%BB%E9%A2%98.png)
 >  [以自己的步骤为主，额外参考链接](https://blog.csdn.net/qq_32293345/article/details/81144831)
+
+### Eclipse 字体更换  
+- 修改代码编辑区的字体：Windows--Preferences--搜索栏中搜索font--选择Colors and Fonts--对Basic-Text Font进行修改
+- 修改其他的字体大小：同理是在上述路径Basic中修改
+	
+	![](https://github.com/floatLig/Learn-Inbox/blob/master/media/Eclipse%20Font.png)
+
+### Eclipse 导入整个项目
+- File--Import--General--Existing Projects into Worksplace
+
+	![](https://github.com/floatLig/Learn-Inbox/blob/master/media/Eclipse%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE.png)
