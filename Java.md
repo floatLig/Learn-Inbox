@@ -1,7 +1,8 @@
 # Java
-- Java初级
-	- [成员变量](#成员变量)
-	- [函数](#函数)
+### Java初级
+- [成员变量](#成员变量)
+- [函数](#函数)
+- [思考经验](#思考经验)
 
 ## 成员变量 
 
@@ -91,4 +92,28 @@
 	- Scanner sc=new Scanner(System.in)
 
 ## 函数
+- 流程控制语句
+	- 顺序
+	- 选择(i)
+		- if else
+		- switch(case不用加{})
+	- 循环
+		- for
+		- while
+		- break、continue终止的是循环，而不是if【若要跳出多层循环，使用return跳出函数】
+		- continue,break配合if在循环中使用
+	- 任何算法都是建立在顺序、选择、循环之上的
+	- 多个for，最外层的for是最大框架
+- public static void main(String[] args)
+	- return
+		- 返回类型
+		- 终止函数
+- 常用
+	- 函数被static修饰（属于类），可直接调用，不用创建该类的对象（public不行，因为public的功能不是这个）
 
+## 思考经验
+- 自己打代码：要模型化（对象化）
+	- 初始值只会赋值一次
+	- 半括号的范围：友半括号-向上
+	- 终端光标要手动转到下一行
+- 
