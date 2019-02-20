@@ -1,4 +1,12 @@
 # Java实例
+- [小函数](#小函数)
+	- [循环小练习](#循环小练习)
+	- [对象化-掷色子](#对象化-掷色子)
+	- [递归小函数](#递归小函数)
+- [面向对象](#面向对象)
+	- [构造函数](#构造函数)
+
+## 小函数 
 
 ### 循环小练习
 ```java
@@ -58,7 +66,7 @@
 			}
 		}
 ```
-- 对象化
+### 对象化-掷色子
 ```java
 		/*
 		 * 掷色子：用户输入大/小，色子自动生成数字，并和用户输入的内容进行比较
@@ -98,4 +106,54 @@
 			}
 			System.out.println("*******************");
 		}
+```
+### 递归小函数
+```java
+	static long factorial(int n) {
+		/*
+		 * 递归例子：算阶乘
+		 * 
+		 * 用if区别递归头和递归体
+		 * 递归头：什么时候 终止
+		 * 递归体：什么时候继续
+		 * 
+		 * System.CurrentTimeMills()显示时间
+		 */
+		if(n==1) {
+			return 1;
+		}else {
+			return n*factorial(n-1);
+		}
+	}
+	public static void main(String[] args) {
+		long t1=System.currentTimeMillis();//计算January 1, 1970 UTC.到现在的毫秒数
+		System.out.println(factorial(10));//若这里的数是100，则long不够存放，会溢出，最后的结果为0；
+		long t2=System.currentTimeMillis();
+		System.out.println(t2-t1);//计算上一步到这一步跑了多长时间
+		
+	}
+```
+
+## 面向对象
+
+### 构造函数
+```java
+/*
+ * 在写构造函数的推荐写法 / 一些注意事项
+ */
+public class Student {
+	long id;//id
+	long num;//学号
+	String nameString;//姓名
+	
+	//重载构造函数：对对象的属性进行初始化
+	Student(long _id,long num){
+		id=_id;//传入的参数最好用“_id”这种形式
+		this.num=num;//this表示“这个对象”，即“这个对象的num”等于“传入的num”
+	}
+	Student(long _id,long num,String _nameString){
+		this(_id, num);//调用前面的构造函数，注意：这里只能用this，而不能用Student（_id,num）
+		nameString=_nameString;
+	}
+}
 ```
