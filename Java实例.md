@@ -147,6 +147,8 @@ public class Student {
 	String nameString;//姓名
 	
 	//重载构造函数：对对象的属性进行初始化
+	Student(){//无参数的构造函数！！！一般要加上，因为你创建其他构造函数，系统就不会默认给你加上这个构造函数
+	}
 	Student(long _id,long num){
 		id=_id;//传入的参数最好用“_id”这种形式
 		this.num=num;//this表示“这个对象”，即“这个对象的num”等于“传入的num”
