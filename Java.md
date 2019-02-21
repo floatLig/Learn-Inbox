@@ -183,8 +183,10 @@
 - 合起来
 	- **栈**（ToDo）调用堆的对象，堆的对象的内容由其他堆、方法区的内容组成
 
-###垃圾回收机制Garbage Collection
+### 垃圾回收机制Garbage Collection
+
 ![](https://github.com/floatLig/Learn-Inbox/blob/master/media/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.png)
+
 - 针对对象（**堆**），类似回收垃圾的服务员
 	- C++没有垃圾回收机制，使用后必须把残渣带走，如果没有带走，则这块内存不能使用
 - 算法：根搜索算法（引用可达法）
