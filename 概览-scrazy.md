@@ -1,6 +1,7 @@
 # 总体概览-SCRAZY
 ## 学习方式
  ![学习方式](media/学习方式.jpg)
+ ![上课方式](https://github.com/floatLig/Learn-Inbox/blob/master/media/%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%BC%8F.png)
 
 ## 小经验
 - 当你对一个领域很陌生的时候，在收集一定信息后，你无法比较那种信息更好，你最应当的做法是**马上去尝试**，在尝试后你才有一定的知识储备去判断信息的好或坏
