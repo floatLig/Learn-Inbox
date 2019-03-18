@@ -1,4 +1,9 @@
 # 安装Android Studio
+
+> [成功：软件安装管家](https://mp.weixin.qq.com/s?__biz=MzIwMjE1MjMyMw==&mid=2650196923&idx=1&sn=fc2df766707d6d264feb32fd75270f2b&chksm=8ee16b57b996e241dfbcdd576543c3a423555521682ba4a9ed8aed3f48298401804ab1ca36b1&scene=21#wechat_redirect)
+
+
+
 ### 下载JDK，配置环境变量
 > [参考链接：JDK下载以及配置环境变量](https://www.cnblogs.com/liuhongfeng/p/4177568.html)  
 - 知识补充： 
