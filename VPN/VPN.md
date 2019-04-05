@@ -15,7 +15,7 @@
 ### 通过PureVPN进行翻墙
 - 通过[PureVPN官网](https://www.purevpn.com/)进行付费  
 (目前了解到最低的费用为0.99$ / mon,即一年为80块，可以使用两个账户，共可连接10个设备)  
-- 电脑端配置：在[PureVPN官网中下载软件](https://www.purevpn.com/download)（账号密码登录）[电脑VPN配置](VPN/Windows IKEV Manual   Configuration.pdf)  
+- 电脑端配置：在[PureVPN官网中下载软件](https://www.purevpn.com/download)（账号密码登录）[电脑VPN配置](https://github.com/floatLig/Learn-Inbox/blob/master/VPN/Windows%20IKEV%20Manual%20Configuration.pdf)  
 - 在安卓手机端配置：  
 	- Go to settings on your android phone   
 • Tap on VPN  
