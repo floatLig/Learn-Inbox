@@ -1,4 +1,7 @@
 # 总体概览-SCRAZY
+
+- [知识结构的具体细节--左耳朵耗子之高效学习](https://github.com/floatLig/Learn-Inbox/blob/master/Mind%20Mapping/%E5%B7%A6%E8%80%B3%E6%9C%B5%E8%80%97%E5%AD%90%E4%B9%8B%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0.mmap)
+
 ## 学习方式
  ![学习方式](media/学习方式.jpg)
  ![上课方式](https://github.com/floatLig/Learn-Inbox/blob/master/media/%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%BC%8F.png)
