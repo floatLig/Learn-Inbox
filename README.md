@@ -1,4 +1,6 @@
-# floatLig's blog
+# floatLig's blog  
+
+![](media/知识体系.PNG)  
 
 - [概览-scrazy](https://github.com/floatLig/Learn-Inbox/blob/master/%E6%A6%82%E8%A7%88-scrazy.md)
 
