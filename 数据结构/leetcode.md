@@ -1,5 +1,5 @@
 ## 目录
-- [Reverse Link List](#Reverse Linked List)
+- [Reverse Link List](#Reverse-Linked-List)
 - []()
 
 ### Reverse Linked List
@@ -24,7 +24,7 @@ public:
     }
 };
 ```
-```
+```C++
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
