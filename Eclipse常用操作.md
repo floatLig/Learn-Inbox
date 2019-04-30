@@ -5,14 +5,14 @@
 
 ## Eclipse_thems的配置  
 
-安装Darkest Dark Theme with DevStyle插件（用该插件import下载的主题）
+**安装Darkest Dark Theme with DevStyle插件（用该插件import下载的主题）**
 1、 Help-Eclipse Marketplace--搜索 Darkest Dark Theme with DevStyle--点击Install
 2、 等待下方 进度条 安装完成--Eclipse提示自动重启  
 
-下载人气主题  
-1、 主题链接：[Eclipse Color Themes下载链接](http://www.eclipsecolorthemes.org/?q=)
-2、 选择主题--
-3、下载XML文件（在windows-preferences-DevStyle-Color Themes-import导入）
+**下载人气主题**   
+1、 主题链接：[Eclipse Color Themes下载链接](http://www.eclipsecolorthemes.org/?q=)  
+2、 选择主题--  
+3、下载XML文件（在windows-preferences-DevStyle-Color Themes-import导入）   
 > - xml文件可以预览效果
 > - 或者下载EPF文件（在file中import-preference-import中导入）
 
