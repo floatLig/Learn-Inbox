@@ -1,6 +1,6 @@
 ## 目录
-- [206. Reverse Link List](#206.-Reverse-Linked-List)
-- [20. Valid Parentheses](#20.-Valid-Parentheses)
+- [206. Reverse Link List](#206-Reverse-Linked-List)
+- [20. Valid Parentheses](#20-Valid-Parentheses)
 
 ### 206. Reverse Linked List
 
