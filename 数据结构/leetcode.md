@@ -28,6 +28,9 @@ public:
 ```
 **Solution**
 ```C++
+/*
+要使链表反转，需要有三个位置定位；用curr、prev指针、nextTemp指针，curr->next=prev使指针反转;prev=curr;curr=nextTmep;两个指针顺延遍历
+*/
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -83,6 +86,9 @@ Output: true
 ```
 **Solution**
 ```C++
+/*
+因为括号配对的过程：就是栈后进先出的过程；因此你可以遇到前括号就放进栈中，遇到后括号就从栈中弹出前括号
+*/
 class Solution {
 public:
     bool isValid(string s) {
@@ -134,7 +140,7 @@ minStack.getMin();   --> Returns -2.
 ```
 
 **Solution**
-```
+```C++
 /*
 思路:该算法的核心是如何找到栈中的最小值；因为栈对栈，因此你可以再创造一个“用来存储最小值的栈s_min”；输入该栈s_min的数据为“当前最小值”（受限制的数据）
 */
@@ -237,8 +243,12 @@ Note:
 - Please do not use the built-in Queue library.
 
 **Solution**
-```
-//按照习惯来，front指的是有数据的，rear指的是没有数据的
+```C++
+/*
+按照习惯来，front指的是有数据的，rear指的是没有数据的
+数组使用容器：vector
+队列满的时候，vector不要留空，因此队列空和队列满的判定条件都是一样的：front=rear，所以你可以需要通过设置一个emptyFlag来判断队列是不是空的
+*/
 
 class MyCircularQueue {
 private:
