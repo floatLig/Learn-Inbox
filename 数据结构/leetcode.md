@@ -3,6 +3,8 @@
 - [20. Valid Parentheses](#20-Valid-Parentheses)
 - [155. Min Stack](#155-Min-Stack)
 - [622. Design Circular Queue](622-Design-Circular-Queue)
+- [698. Partition to K Equal Sum Subsets](698-Partition-to-K-Equal-Sum-Subsets)
+- [102. Binary Tree Level Order Traversal](102-Binary-Tree-Level-Order-Traversal)
 
 ## 206. Reverse Linked List
 
@@ -344,4 +346,147 @@ public:
  * bool param_5 = obj->isEmpty();
  * bool param_6 = obj->isFull();
  */
+```
+
+## 698. Partition to K Equal Sum Subsets
+
+Given an array of integers nums and a positive integer k, find whether it's possible to divide this array into k non-empty subsets whose sums are all equal.
+
+ 
+
+Example 1:
+```
+Input: nums = [4, 3, 2, 3, 5, 2, 1], k = 4
+Output: True
+Explanation: It's possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
+ ```
+
+Note:
+
+- 1 <= k <= len(nums) <= 16.
+- 0 < nums[i] < 10000.
+
+**Solution**
+```C++
+/*
+画图模型：
+1. nums[n]:----------(beginIndex)
+2. subsets: ___  ___  ___(一共k组，每一组都存放相加起来subsum/target的数)
+
+思路：
+1. 先算出每一组的subSum/targe
+(含义相同，但是在canPartitionKSubsets函数中用subSum表示，Partition中用target表示)
+2. nums中如果最大的数大于subSum，return false，如果刚好等于，则k--、beginIndex--,
+则可确定一个数为一组，不用再尝试遍历
+3. Partition函数功能为：尝试填充“每一组”的“任何个数据”
+4. Partition为递归函数：
+   终止条件为index<0;
+   在k组中填充数据：for(i<subsets.size())
+   在每一组中尝试填充n个数据：if(相加的和为超出界限) 递归Partition
+*/
+class Solution {
+public:
+    bool canPartitionKSubsets(vector<int>& nums, int k) {
+        int sum=0;
+        for(int b:nums)sum+=b;
+        if(sum%k!=0)return false;//如果相加后整除的结果不是整数，那么直接return true
+        int subSum=sum/k;//得到每个组的和subSum
+        sort(nums.begin(), nums.end());//从小到大排列
+        int beginIndex=nums.size()-1;//排序后最大数的下标
+        if(nums[beginIndex]>subSum)return false;
+        while(beginIndex>=0 && nums[beginIndex]==subSum){
+            beginIndex--;
+            k--;
+        }
+        vector<int>subsets(k,0);
+        return Partition(subsets,nums,subSum,beginIndex);
+    }
+    bool Partition(vector<int>& subsets,vector<int>& nums,int target,int index){
+        if(index<0)return true;//当nums中所有的数都能够成功的放进subsets中，即路的尽头
+        int selected=nums[index];
+        //每一条路都是进行遍历尝试，成功就返回true，不成功就选择另一条路进行尝试
+        for(int i=0;i<subsets.size();i++){//Ⅰ：这个数在尝试换组存放👇
+            if(subsets[i]+selected<=target){
+                subsets[i]+=selected;//Ⅱ：不同的数在尝试在这个组存放
+                if(Partition(subsets,nums,target,index-1))return true;//Ⅲ：所有的子问题都得到解决，return true。这条路走到了成功尽头：index<0，return true后来到这里；成功了，故每一层也同样层层return true
+                subsets[i]-=selected;//这个数尝试在换组存放👆
+            }
+        //return false不是写在这里；总有一个return不会写在条件（for,while,if）里面
+        }
+        return false;//return false是写在这里
+    }
+};
+```
+
+## 102. Binary Tree Level Order Traversal
+
+Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+
+For example:
+Given binary tree `[3,9,20,null,null,15,7]`,
+```
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+return its level order traversal as:
+```
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+**Solution**
+
+```
+/*
+知道了一棵树的根结点，就知道了整个树
+
+按层输出，可借助queue先进先出这种数据结构
+
+画图模型：
+1. queue<TreeNode *> q:             -------通过信号量flag：表示一个row中要输入多少个值（当前一个row输出完毕后，flag=q.size()）
+2. vector<int> row:                 ----while(flag!=0)push_back(q.front()->val)
+3. vector<vector<int>> result:      直接可push_back(row)得到
+*/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if(!root)return {};//如果没有数据时，直接return{}
+        vector<int>row;
+        queue<TreeNode *>q;
+        vector<vector<int>>result;
+        
+        q.push(root);
+        int flag=1;
+        //这一层的循环是，是确定result.size()的个数（多少个向量vector）
+        while(!q.empty()){
+            //这一层循环是判断每一个row要输出多少个元素
+            while(flag!=0){
+                if(q.front()->left!=NULL)q.push(q.front()->left);
+                if(q.front()->right!=NULL)q.push(q.front()->right); 
+                row.push_back(q.front()->val);
+                q.pop();
+                flag--;
+            }
+            result.push_back(row);//可以直接插入一整个向量
+            row.clear();
+            flag=q.size();
+        }
+        return result;
+    }
+};
 ```
