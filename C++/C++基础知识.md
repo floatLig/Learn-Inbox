@@ -216,3 +216,105 @@ int main() {
 }
 ```
 	
+## 指针及其引用
+
+对象的定义：对象是一块能储存并具有某种类型的内存空间
+一个对象a，他有**值**和**地址&a**，运行程序时，计算机会为该对象分配存储空间，来存储该对象的值，我们通过给对象的地址，来访问存储空间中的值
+
+指针p也是对象，它同样有**地址&p**和**存储的值p**，只不过，**p存储的数据类型是数据的地址**。如果我们要以p中存储的数据为地址，来访问对象的值，则要在p前加解引用操作符“\*”，即\*p
+
+对象有常量（const）和变量之分，既然指针本身是对象，那么指针所存储的地址也有常量和变量之分，常量指针是指，指针这个对象所存储的地址是不可以改变的，而指向常量的指针的意思是，不能通过该指针来改变这个指针所指向的对象。
+
+我们可以把引用理解成变量的别名。定义一个引用的时候，程序把该引用和它的初始值绑定在一起，而不是拷贝它。
+这可以很好的**应用于函数的参数中**：如果函数的参数**带了&**，那么在这个函数中修改该参数的值，**其实上是修改原来的地址的值**；如果没有带&，**那么在函数修改该参数的内容，不会传递到外面的函数中取**
+
+其中需要特殊注意的是如下的内容：如果函数参数是'char * &pa'
+```C++
+#include <cstdlib>
+#include <cstring>
+#include <memory>
+#include <iostream>
+
+using namespace std;
+
+void func2(char * pa,char * pb)
+{
+	*pa = 'c';//因为是指针【指针的功能：修改它指向的地址空间的值】，所以如果修改原来的a的值，无论是&，还是没有&，都会修改* pa的值
+	pa = pb;//因为pa没有"&",所以修改pa的指向【pa存储空间中的值】，是不会传递到外面的，即在外面的*pa=c;而不会*pa=b;
+}
+
+void func3(char * &pa, char * pb)
+{
+	pa = pb;//因为pa有"&",所以修改pa的指向【pa存储空间中的值】，是会传递到外面的，即在外面的*pa=b;而不是原来的pa='c';
+}
+int main()
+{
+	char a = 'a';
+	char * pa = &a;
+
+	char b = 'b';
+	char *pb = &b;
+
+	func2(pa, pb);
+	cout << *pa << endl;
+	func3(pa, pb);
+	cout << *pa << endl;
+
+	system("pause");
+	return 0;
+}
+
+输出结果：
+c
+b
+
+
+```
+
+> 链接：https://www.zhihu.com/question/37608201/answer/72766337
+
+
+！！如果是在递归函数中的参数有"&"，如以下代码的（&ptr）,则代表着如果递归内层结点改变，那么外层的结点就跟着改变；同时根据这个道理，如果在内层中修改root=root->rchild,如果这个时候递归结束，返回外层，则外层相当于删除了内层的root结点
+```C++
+template<class T>
+void BiSearchTree<T>::Delete(BTNode<T> *&ptr,const T &item)
+{
+	BTNode<T> *temp;
+	if(ptr!=NULL)
+	{
+		if(item<ptr->element)Delete(ptr->Left(),item);
+		else if(item>ptr->element)Delete(ptr->Right(),item);
+
+		else if(ptr->Left()!=NULL&&ptr->Right()!=NULL)
+		{
+			BTNode<T> *min;
+			min=ptr->Right();
+
+			while(min->Left()!=NULL)min=min->Left();
+
+			ptr->element=min->element;
+
+			Delete(ptr->Right(),min->element);
+		}
+		else
+		{
+			temp=ptr;
+			
+			if(ptr->Left()==NULL)ptr=ptr->Right();//在内层中修改root=root->rchild
+			else if(ptr->Right()==NULL)ptr=ptr->Left();
+			delete temp;
+			//递归结束，返回外层，则外层相当于删除了内层的root结点
+		}
+	}
+}
+
+```
+
+## 打代码遇到的坑
+
+1. 判断质数
+```C++
+	if (p % 6 != 1 && p % 6 !=5)
+		return false;//质数一定是6的倍数的+1或者-1的数,一定是&&;这个数既不是6-1，也不是6+1
+```
+2. ！！做算法分析题的时候，你可以从普通的角度先写出来；然后再考虑特殊的边界角度；这样子应该就不会有错。
