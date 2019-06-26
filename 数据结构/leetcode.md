@@ -115,7 +115,7 @@ public:
                 default: break;
             }
         }
-        return paren.empty();
+        return paren.empty();//错误五：注意是判断有没有空
     }
 };
 ```
@@ -487,6 +487,53 @@ public:
             flag=q.size();
         }
         return result;
+    }
+};
+```
+
+## 69. Sqrt(x)
+
+Implement int sqrt(int x).
+
+Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
+
+Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+
+**Example 1:**
+
+```
+Input: 4
+Output: 2
+```
+
+**Example 2:**
+
+```
+Input: 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since 
+             the decimal part is truncated, 2 is returned.
+```
+
+**Solution:**
+
+```C++
+class Solution {
+public:
+    int mySqrt(int x) {
+        if(x==0) return 0;
+        int left=1;
+        int right=x;
+        while(true){//因为该题，一定能够找到结果值，所以可以直接写true
+            int mid=left+(right-left)/2;//mid都是这么写的
+            if(mid<=x/mid){
+                left=mid+1;//如果mid小于，那么都是这么写的
+            }
+            else{
+                if(mid-1<=x/(mid-1))return mid-1;//这道题的关键就是：什么时候返回“要返回的值”
+                right=mid-1;//如果mid大于，那么都是这么写的
+            }
+        }
     }
 };
 ```
