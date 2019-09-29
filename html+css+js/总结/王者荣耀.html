@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="robots" content="all" />
+		<meta name="author" content="Tencent-CP" />
+		<meta name="description" content="《王者荣耀》是腾讯天美工作室历时3年推出的东方英雄" />
+		<meta name="keywords" content="王者荣耀" />
+		<title>今日不限号-王者荣耀网站</title>
+		
+		<style type="text/css">
+		/*reset*/
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+		table{border-collapse:collapse;border-spacing:0}
+		
+		/*footer*/
+		#footer_ied {text-align:center;font-size:12px;line-height:19px;color:#594e4e;background: url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/foot_bg.jpg) no-repeat;}
+		.wrap_ied {margin:0 auto;padding:30px;width:940px}
+		.wrap_ied a {color:#594e4e}
+		#footer_ied .e {font-size:10px;-webkit-text-size-adjust:none;}
+		
+		/*页面样式*/
+		.c:before,.c:after {content:"";display:table}
+		.c:after {clear:both}
+		.c {zoom:1}
+		.wrap,.#footer_ied {width: 100%;min-width: 1000px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1002?'1000px':'');}
+		.wrap {background:url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/rp1.jpg) no-repeat 50% 0;}
+		.wrap1 {background:url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/rp2.jpg) no-repeat 50% 600px;}
+		.wrap2 {background:url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/rp3.jpg) no-repeat 50% 2600px;}
+		.container {width:1000px;margin:0 auto;}
+		.head{font-family: "microsoft yahei";}
+		.hide {display:block;width:0;height:0;overflow:hidden;}
+		.pr {position:relative;}
+		.pa {position:absolute;}
+		.db{display:block;text-indent:-999em;}
+		.sp{background:url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/sp.png) no-repeat;}
+		
+		/*head */
+		.head{background: url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/hd.jpg) no-repeat 50% 0;height: 490px;}
+		.title{left:250px;top:186px;width: 509px;height: 50px;}	
+		.logo{top:0px;left:360px;width:290px;height:190px;}
+		.btn{top:709px;left:198px;}
+		.btn li{float: left;}
+		.btn li a{display:block;width: 266px;height: 68px;font-size: 24px;line-height:68px;font-weight: bold;color: #40180c;text-indent: 113px;}
+		.btn .andr{background-position: -9px -119px;}
+		.btn .app{background-position: -9px -14px;}
+		.btn .lr{margin-right: 65px;}
+		
+		/*content*/
+		.content{background: url(http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/ct.jpg) no-repeat 50% 0;padding-top:366px;}  /*补充下半部分图片*/	
+		.box1{height: 597px;}
+		.title1{height: 77px;background-position: -295px -220px;font-size: 48px;color: #ffffff;padding-left: 20px;}
+		.tit1{margin-left: 30px;font-size: 36px;font-weight: bold;}
+		.role{color: #ffa417;font-style:normal;font-weight: bold;}
+		.details{display:block;width: 196px;height: 60px;background: #212144 ;font-size: 24px;color: #fcdc9f;left:797px;top:5px;text-align: center;line-height:60px ;}
+		.zc{font-size: 20px;color: #fcdc9f;line-height: 55px;}
+		.con1{height:383px;background: #0e0f22;margin-top: 15px;}
+		.gift1{padding-left: 8px;}
+		.gift1 li{float: left;}
+		.gift1_btn{width: 320px;height: 60px;margin:25px auto 0px;display: block;background-position: -23px -307px;font-size: 26px;font-weight: bold;color: #212144;line-height: 60px;text-align: center;}
+		.box2{height: 569px;}
+		.title2{height: 77px;background-position: -295px -220px;font-size: 48px;color: #ffffff;padding-left: 20px;}
+		.con2{height:359px;margin-top:10px;background: #0e0f22;}
+		.box3{height: 518px;}
+		.title3{height: 77px;background-position: -295px -220px;font-size: 48px;color: #ffffff;padding-left: 20px;}
+		.gift3{padding-top:60px;padding-left: 30px;}
+		.gift3 li{float: left;margin-right: 60px;}
+		.gift3 .lr{margin-right: 0px;}
+		.gift3 span{display:block;font-size: 16px;line-height: 47px;background: #3d43b4;text-align: center;color: #ffffff;}
+		.gift3 a{display: block;margin-top:10px;background: #212144;font-size: 18px;color: #ffffff;line-height: 50px;text-align: center;}
+		.box4{height: 431px;}
+		.title4{height: 77px;background-position: -295px -220px;font-size: 48px;color: #ffffff;padding-left: 20px;}
+		.gift4{background: #0e0f22;padding:0px 30px 30px;margin-top:35px;}
+		.gift4 li{float: left;position: relative;}
+		.gift4 .l2{margin-left: 15px;}
+		.gift4 .l3{width: 320px;padding:50px 0px 0px 65px;}
+		.gift4 span{display: block;font-size: 25px;font-weight: bold;color: #fcdc9f;line-height: 38px;}
+		.gift4 a{display: block;width: 232px;height: 59px;background-position: -24px -230px;margin-top:25px;font-size: 26px;color: #212144;font-weight: bold;text-align: center;line-height: 59px;}
+		.pic_desp{left:0px;top:203px;width:254px;font-size: 16px;font-style:normal;color: #ffffff;line-height: 50px;text-align: center;}
+		.pic_desp1{width:286px;}
+		
+		/*banner*/
+		.dia-con1{width: 690px;background: #1d1d33;border: 3px solid #fcdc9f;padding-bottom: 20px;}/*边框*/
+		.dia-close{display:block;width: 21px;height: 21px;background-position: -336px -40px;top:17px;right: 20px;}
+		#tab .on{background: #42427c;}
+		.pop1_con{width:615px;background: #0e0f22;margin:10px auto 0px;padding:10px;}
+		.table1{width: 612px;}
+		.table1 thead th{color: #f9d48e;font-size: 16px;line-height: 32px;text-align: center;background: #2e2e4c;border: 1px solid #0e0f22;}
+		.table1 tbody td{border: 1px solid #212144;height: 30px;color: #f9d48e;font-size: 16px;line-height: 32px;text-align: center;}
+		.pop2_tit{font-size: 26px;font-weight: bold;color: #f9d48e;line-height: 70px;text-align: center;}
+		.table1 .pop3_zt{font-size: 13px;}
+		.pop{width: 420px;background: #1d1d33;border: 3px solid #fcdc9f;padding:25px 90px;}
+		.pop img{display:block;width: 163px;height: 173px;float: left;}
+		.pop span{font-size: 25px;font-weight: bold;color: #e0bd7a;display: inline-block;float: left;margin-left: 27px;margin-top:29px;width:225px}
+		
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="wrap1">
+				<div class="wrap2">
+					<div class="container">
+						
+						 <div class="head pr">
+
+			       			 <h1 class="hide">王者荣耀 今日不限号</h1>
+			       			 <h2 class="title pa db">全球首款5v5英雄公平对战手游</h2>
+			       			 <a href="http://pvp.qq.com/" title="王者荣耀" class="logo db pa" target="_blank">王者荣耀</a> 
+			       			 <ul class="btn pa c">
+			       			 	<li class="lr"><a href="javascript:alert:;" onClick="TGDialogS('test7')" class="app sp">IOS下载</a></li>
+			       			 	<li><a href="javascript:;" class="andr sp" onClick="TGDialogS('test7')">安卓游戏</a></li>
+			       			 </ul>
+			    		</div>
+						
+						<div class="content">
+							
+							<div class="box1"  name="box1">
+			    				<h3 class="title1 sp pr">1
+			    					<strong class="tit1">注册送<i class="role">稀有英雄</i></strong>
+			    					<a class="details pa" href="javascript:;" onClick="TGDialogS('test6')">查看详情</a>
+			    				</h3>
+			    				<p class="zc">独享注册大礼：</p>
+			    				<div class="con1">
+			    					<ul class="gift1 c">
+			    						<li><img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con1_pic1.jpg" width="251" height="278"/></li>
+			    						<li><img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con1_pic2.jpg" width="251" height="278" /></li>
+			    						<li><img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con1_pic3.jpg" width="490" height="278"/></li>
+			    					</ul>
+			    					<a href="/index1.html" class="gift1_btn sp">立即领取</a>
+			    				</div>
+			    			</div>
+			    			
+			    			<div class="box2" name="box2">
+			    				<h3 class="title1 sp pr">2
+			    					<strong class="tit1">签到、冲级得<i class="role">永久皮肤</i></strong>
+			    					<a href="javasript:;" class="details pa" onclick="TGDialogS('test1')">查看详情</a>
+			    				</h3>
+			    				<p class="zc">完成签到和冲级任务，永久英雄、皮肤、海量金币、钻石送不停</p>
+			    				<div class="con2">
+			    					<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con2_pic.jpg" width="1000" height="262"/>
+			    					<a href="/index1.html" class="gift1_btn sp">立即领取</a>
+			    				</div>
+			    			</div>
+			    			
+			    			<div class="box3" name="box3">
+			    				<h3 class="title3 sp">3
+			    					<strong class="tit1"><i class="role">天天</i>有好礼</strong>
+			    				</h3>
+			    				<ul class="gift3 c">
+			    					<li>
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con3_pic1.jpg" alt="每周签到送好礼" width="186" height="173"/>
+			    						<span>每周签到送好礼</span>
+			    						<a href="javascript:;" onclick="TGDialogS('test5')">查看详情</a>
+			    					</li>
+			    					<li>
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con3_pic2.jpg" alt="玩5v5得热卖皮肤" width="186" height="173"/>
+			    						<span>玩5v5得热卖皮肤</span>
+			    						<a href="javascript:;" onclick="TGDialogS('test3')">查看详情</a>
+			    					</li>
+			    					<li>
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con3_pic3.jpg" alt="迎不限号，英雄天天送" width="186" height="173"/>
+			    						<span>迎不限号，英雄天天送</span>
+			    						<a href="javascript:;" onClick="TGDialogS('test2')">查看详情</a>
+			    					</li>
+			    					<li class="lr">
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con3_pic4.jpg" alt="分享拿钻石" width="186" height="173"/>
+			    						<span>分享拿钻石</span>
+			    						<a href="javascript:;" onClick="TGDialogS('test8')">查看详情</a>
+			    					</li>
+			    				</ul>
+		    					<a href="/index1.html" class="gift1_btn sp">立即领取</a>
+			    			</div>
+			    			
+			    			<div class="box4" name="box4">
+			    				<h3 class="title4 sp pr">4
+			    					<strong class="tit1">首充<i class="role">送赵云</i></strong>
+			    					<a href="javascript:;" class="details pa" onclick="TGDialogS('test4')">查看详情</a>
+			    				</h3>
+			    				<ul class="gift4 c">
+			    					<li>
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con4_pic1.jpg" alt="永久英雄赵云" width="254" height="253"/>
+			    						<i class="pic_desp pa">永久英雄赵云</i>
+			    					</li>
+			    					<li class="l2">
+			    						<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/con4_pic2.jpg" alt="价值888点券永久皮肤" width="286" height=""/>
+			    						<i class="pic_desp pic_desp1 pa">价值888点券永久皮肤</i>
+			    					</li>
+			    					<li class="l3">
+			    						<span>首次充值满6元</span>
+			    						<span>即送专属英雄</span>
+			    						<span>累计满40元再送永久皮肤！</span>
+			    						<a href="javascript:;" class="sp" onclick="TGDialogS('test7')">马上充值</a>
+			    					</li>
+			    				</ul>
+			    			</div>
+			    			
+			    			<!--弹窗-->
+			    			<div class="dialog" id="test1" style="display: none;">
+			    				<div class="dia-con1 pr">
+			    					<ul id="tab" class="c">
+			    						<li class="lr on">签到得永久皮肤</li>
+			    						<li>冲级拿海量钻石</li>
+			    					</ul>
+			    					<div class="pop1_con" id="ct1">
+			    						<table class="table1">
+			    							<thead>
+			    								<tr>
+			    									<th width="210">活动时间</th>
+			    									<th width="164">活动条件</th>
+			    									<th width="233">活动奖励</th>
+			    								</tr>
+			    							</thead>
+			    							<tbody>
+			    								<tr>
+			    									<td rowspan="14">2016年1月1日新注册用户</td>
+			    									<td>累计登录1天</td>
+			    									<td>钻石*38</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录2天</td>
+			    									<td>永久皮肤-死亡骑士</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录3天</td>
+			    									<td>永久英雄妲己</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录4天</td>
+			    									<td>金币*188</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录5天</td>
+			    									<td>永久皮肤-魅力维加斯</td>
+			    								</tr>
+			    								<tr>
+			    									<td>永久登录6天</td>
+			    									<td>金币*188</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录7天</td>
+			    									<td>永久英雄-安琪拉</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录8天</td>
+			    									<td>金币*288</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录9天</td>
+			    									<td>钻石*288</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录10天</td>
+			    									<td>金币*288</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录11天</td>
+			    									<td>钻石*69</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录12天</td>
+			    									<td>金币*388</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录13天</td>
+			    									<td>钻石*60</td>
+			    								</tr>
+			    								<tr>
+			    									<td>累计登录14天</td>
+			    									<td>14天皮肤-玩偶对对碰</td>
+			    								</tr>
+			    							</tbody>
+			    						</table>
+			    					</div>
+			    					<div class="pop1_con" style="display: none;" id="ct2">
+			    						<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="200">活动时间</th>
+								    				<th width="164">活动条件</th>
+								    				<th width="243">活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="8">永 久</td>
+							    					<td>达到6级</td>
+							    					<td>钻石*30</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到9级</td>
+							    					<td>钻石*50</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到12级</td>
+							    					<td>钻石*60 双倍金币卡*3天</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到15级</td>
+							    					<td>钻石*80 程咬金—超能陆战队皮肤体验卡*7日</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到18级</td>
+							    					<td>钻石*120</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到21级</td>
+							    					<td>钻石*160 高渐离—鬼泣皮肤体验卡*14日</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到25级</td>
+							    					<td>4级符文*1</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达到30级</td>
+							    					<td>5级符文*1</td>
+							    				</tr>		
+							    			</tbody>
+							    		</table>
+			    					</div>
+			    				</div>
+								<a href="javascript:showDialog.hide()" class="dia-close sp pa" title="关闭"></a>
+			    			</div>
+			    			
+			    			<div class="dialog" id="test2" style="display:none;">
+							    <div class="dia-con1 pr">
+							    	<h3 class="pop2_tit">迎不限号英雄天天送 </h3>
+							    	<div class="pop1_con">
+							    		<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="210">活动时间</th>
+								    				<th width="164">活动条件</th>
+								    				<th width="233">活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="15">10.28-11.1</td>
+							    					<td rowspan="15">随机英雄体验卡*1日</td>
+							    					<td>刘禅</td>   
+							    				</tr>
+							    				<tr>
+							    					<td>庄周</td>
+							    				</tr>
+							    				<tr>
+							    					<td>甄姬</td>
+							    				</tr>
+							    				<tr>
+							    					<td>孙膑</td>
+							    				</tr>
+							    				<tr>
+							    					<td>钟无艳</td>
+							    				</tr>
+							    				<tr>
+							    					<td>扁鹊</td>
+							    				</tr>
+							    				<tr>
+							    					<td>鲁班</td>
+							    				</tr>
+							    				<tr>
+							    					<td>狄仁杰</td>
+							    				</tr>
+							    				<tr>
+							    					<td>墨子</td>
+							    				</tr>
+							    				<tr>
+							    					<td>王昭君</td>
+							    				</tr>
+							    				<tr>
+							    					<td>老夫子</td>
+							    				</tr>
+							    				<tr>
+							    					<td>荆轲</td>
+							    				</tr>
+							    				<tr>
+							    					<td>廉颇</td>
+							    				</tr>
+							    				<tr>
+							    					<td>达摩</td>
+							    				</tr>
+							    				<tr>
+							    					<td>白起</td>
+							    				</tr>
+							    			</tbody>
+							    		</table>
+							    	</div>
+								</div>
+							    <a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+							</div>
+			    			
+			    			<div class="dialog" id="test3" style="display: none;">
+			    				<div class="dia-con1 pr">
+			    					<h3 class="pop2_tit">玩5v5得热卖皮肤</h3>
+			    					<div class="pop1_con">
+			    						<table class="table1">
+			    							<thead>
+							    				<tr>
+								    				<th width="135">活动时间</th>
+								    				<th width="235">活动条件</th>
+								    				<th width="230">活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="14">10.28-11.1</td>
+							    					<td rowspan="14">【5v5来袭】 <br />每日参与5v5王者峡谷，<br /> 100%得随机皮肤体验卡1日</td>
+							    					<td>英喵野望</td>   
+							    				</tr>
+							    				<tr>
+							    					<td>鲤鱼之梦</td>
+							    				</tr>
+							    				<tr>
+							    					<td>冰雪奇缘</td>
+							    				</tr>
+							    				<tr>
+							    					<td>天使之翼</td>
+							    				</tr>
+							    				<tr>
+							    					<td>生化危机</td>
+							    				</tr>
+							    				<tr>
+							    					<td>红莲之瞳</td>
+							    				</tr>
+							    				<tr>
+							    					<td>木偶奇遇记</td>
+							    				</tr>
+							    				<tr>
+							    					<td>锦衣卫</td>
+							    				</tr>
+							    				<tr>
+							    					<td>金属风暴</td>
+							    				</tr>
+							    				<tr>
+							    					<td>精灵公主</td>
+							    				</tr>
+							    				<tr>
+							    					<td>潮流先人</td>
+							    				</tr>
+							    				<tr>
+							    					<td>爱心护理</td>
+							    				</tr>
+							    				<tr>
+							    					<td>地狱岩魂</td>
+							    				</tr>
+							    				<tr>
+							    					<td>大发明家</td>
+							    				</tr>
+							    				<tr>
+							    					<td>10.30-11.3</td>
+							    					<td class="pop3_zt">【深渊大乱斗】<br /> 每日参与深渊大乱斗，100%得钻石</td>
+							    					<td>10钻+30金币</td>
+							    				</tr>
+							    				<tr>
+							    					<td>11.3-11.5</td>
+							    					<td class="pop3_zt">【5V5来袭】<br /> 每日参与5v5王者峡谷，100%得钻石</td>
+							    					<td>20钻石</td>
+							    				</tr>
+							    			</tbody>
+			    						</table>
+			    					</div>
+			    				</div>
+			    				<a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+			    			</div>
+			    			
+			    			<div class="dialog" id="test4" style="display:none;">
+							    <div class="dia-con1 pr">
+							    	<h3 class="pop2_tit">首冲送赵云</h3>
+							    	<div class="pop1_con">
+							    		<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="135">活动时间</th>
+								    				<th width="235">活动条件</th>
+								    				<th width="230">活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="6" class="pop4_zt">10月28日起新注册用户</td>
+							    					<td>首冲60点券</td>
+							    					<td>永久英雄赵云</td>   
+							    				</tr>
+							    				<tr>
+							    					<td rowspan="4">首次续费60点券</td>
+							    					<td>程咬金、小乔、孙尚香 <br />随机英雄体验卡*7天</td>
+							    				</tr>
+							    				<tr>
+							    					<td>60钻</td>		
+							    				</tr>
+							    				<tr>
+							    					<td>600金币</td>	
+							    				</tr>
+							    				<tr>
+							    					<td>双倍金币卡3天</td>	
+							    				</tr>
+							    				<tr>
+							    					<td>累计充值400点券</td>
+							    					<td>赵云永久皮肤：忍*炎影</td>
+							    				</tr>
+							    			</tbody>
+							    		</table>
+							    	</div>
+								</div>
+							    <a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+							</div>
+							
+							<div class="dialog" id="test5" style="display:none;">
+							    <div class="dia-con1 pr">
+							    	<h3 class="pop2_tit">每日签到好礼</h3>
+							    	<div class="pop1_con">
+							    		<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="140">活动时间</th>
+								    				<th width="140">活动条件</th>
+								    				<th>活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="7" class="pop5_zt">每周刷新</td>
+							    					<td>累计登录1天</td>
+							    					<td>胜利金币卡*2</td>   
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录2天</td>
+							    					<td>钻石*28</td>
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录3天</td>
+							    					<td>胜利经验卡*4</td>
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录4天</td>
+							    					<td>金币*88</td>
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录5天</td>	
+							    					<td>符文礼包（随机开出2,3级符文）</td>
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录6天</td>
+							    					<td>体验礼包（随机皮肤体验卡+符文礼包）</td>
+							    				</tr>
+							    				<tr>
+							    					<td>累计登录7天</td>
+							    					<td>神秘宝箱（钻石 或金币福袋 或3级符文）</td>
+							    				</tr>
+							    			</tbody>
+							    		</table>
+							    	</div>
+								</div>
+							    <a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+							</div>
+							
+							<div class="dialog" id="test6" style="display:none;">
+							    <div class="dia-con1 pr">
+							    	<h3 class="pop2_tit">注册送稀有英雄</h3>
+							    	<div class="pop1_con">
+							    		<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="140">活动时间</th>
+								    				<th width="140">活动条件</th>
+								    				<th>活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td rowspan="5" class="pop3_zt">2016年10月28日起</td>
+							    					<td rowspan="5">注册即送</td>
+							    					<td>永久英雄亚瑟</td>   
+							    				</tr>
+							    				<tr>
+							    					<td>永久英雄项羽</td>
+							    				</tr>
+							    				<tr>
+							    					<td>双倍经验卡3天</td>
+							    				</tr>
+							    				<tr>
+							    					<td>68钻石</td>
+							    				</tr>
+							    				<tr>
+							    					<td>288金币</td>	
+							    				</tr>
+							    			</tbody>
+							    		</table>
+							    	</div>
+								</div>
+							    <a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+							</div>
+							
+							<div class="dialog" id="test7" style="display:none;">
+								<div class="pop pr c">
+									<img src="http://game.gtimg.cn/images/yxzj/cp/a20151028limitless/ewm.jpg" alt="二维码" width="163" height="173" />
+									<span>极速下载 </span>
+									<span>奖励在游戏内领取哦</span>
+									<a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+								</div>
+							</div>
+							
+							<div class="dialog" id="test8" style="display:none;">
+							    <div class="dia-con1 pr">
+							    	<h3 class="pop2_tit">分享拿钻石</h3>
+							    	<div class="pop1_con">
+							    		<table class="table1">
+							    			<thead>
+							    				<tr>
+								    				<th width="140">活动时间</th>
+								    				<th width="140">活动条件</th>
+								    				<th>活动奖励</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td class="pop3_zt">10.26-11.2</td>
+							    					<td>每日分享一次游戏</td>
+							    					<td>每日分享得20钻石</td>   
+							    				</tr>
+							    			</tbody>
+							    		</table>
+							    	</div>
+								</div>
+							    <a class="dia-close sp pa" href="javascript:showDialog.hide()" title="关闭"></a>
+							</div>
+			    			
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="http://ossweb-img.qq.com/images/js/foot.js"></script>
+		<script src="http://ossweb-img.qq.com/images/js/milo/milo-min.js"></script>
+		<script src="http://ossweb-img.qq.com/images/js/jquery/jquery-1.3.2.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			//上下滑动
+			(function($){
+					$(function() {
+						$('a[href*=#],area[href*=#]').click(function() {
+							if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+								var $target = $(this.hash);
+								$target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+								if ($target.length) {
+									var targetOffset = $target.offset().top;
+									$('html,body').stop(true,false).animate({
+											scrollTop: targetOffset
+										},
+										500);
+									return false;
+								}
+							}
+						});
+					})
+				})(jQuery);
+				
+				//侧边栏
+				$(function() {
+					var fixE = $("#float");
+					$(window).bind('scroll.fixed', function() {
+						if ($(window).scrollTop() >= 760) {
+							fixE.removeClass("float").addClass('fixed');
+						} else {
+							fixE.removeClass("fixed").addClass('float');
+						}
+					}).trigger('scroll.fixed');
+				})
+				
+				//导航响应
+				$(window).bind('load scroll', function() {
+					var sTop = $(document).scrollTop();
+					for(var i=0; i<$(".nav a").length; i++){
+						if (sTop >= $(".box"+(i+1)).offset().top) {
+							$(".nav a").removeClass("on");
+							$(".nav a").eq(i).addClass("on");
+						}
+					}
+				})
+				
+				//TOP
+				$(".btn-top").click(function(){
+					var targets = jQuery(document.documentElement).add(document.body);
+					return targets.stop().animate({scrollTop: 0});
+				})
+				
+				//标签切换
+				function g(e) {
+						return (typeof e == 'object') ? e : document.getElementById(e)
+					}
+					function hasClass(o,c) {
+						var regexp = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
+						return regexp.test(o.className)
+					}
+					function setTab(a,b) {
+						var tabs = g(a).getElementsByTagName('li'),
+							cts = []
+						for (var i = 1; i <= tabs.length; i++) {
+							cts.push(g(b+i));
+						};
+						for (var i = 0; i < tabs.length; i++) {
+							tabs[i].n = i;
+							tabs[i].onclick = function() {
+								if (!hasClass(this,'on')) {
+									for (var j = 0; j < tabs.length; j++) {
+										tabs[j].className = tabs[j].className.replace(RegExp("(^|\\s)" + 'on' + "(\\s|$)", "g"), "");
+										cts[j].style.display = 'none'
+									};
+									this.className += (this.className ? " " : "") + 'on';
+									cts[this.n].style.display = 'block'
+								}
+							}
+						};
+					}
+					setTab('tab','ct');
+
+			function closeDialog(){
+				need("biz.dialog-min",function(Dialog){
+					Dialog.hide();
+				});
+			}
+		
+			//弹窗
+			function TGDialogS(e){
+				need("biz.dialog-min",function(Dialog){
+					Dialog.show({
+						id:e,
+						bgcolor:'#000', //弹出“遮罩”的颜色，格式为"#FF6600"，可修改，默认为"#fff"
+						opacity:50      //弹出“遮罩”的透明度，格式为｛10-100｝，可选
+					});
+				});
+			}
+			
+			milo.addEvent(window,'load',function(){
+				loadScript("http://ossweb-img.qq.com/images/js/title.js",function(){ostb_int()},"");
+				loadScript("http://pingjs.qq.com/ping_tcss_ied.js",function(){if(typeof(pgvMain) == 'function')pgvMain();});
+			});
+		</script>
+		
+	</body>
+
+</html>

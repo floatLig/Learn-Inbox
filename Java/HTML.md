@@ -27,10 +27,8 @@ HTML的标签
 前端开发工具:
 HBuilder
 
-
 1. 块级标签
 	1. 可以存在标签属性，对标签的内容进行进一步的补充
-2. align:center left right
 
 ### CSS 
 
@@ -92,6 +90,25 @@ JavaScript:
 1. 加入特效
 2. 检验功能
 
+#### 常用样式
+1. display:block / table 块级元素
+2. overflow:hidden 文本溢出隐藏
+3. text-indent: 规定一个元素首行文本内容之前应该有多少个水平空格
+4. line-height: 属性设置行间举例
+5. clear：指定一个浮动元素，其他元素是否移动位置
+6. zoom：代表缩放 1.0/100%代表不缩放
+7. background-position: 为每个背景图片设置初始位置
+	1. 背景为一张图片，通过background-position，可以获得不同的背景叠加效果（background-position指定背景图位置，本身的大小height weight 决定背景叠加效果的大小）
+8. margin: 外边距（上 右 下 左）
+	1. em 字距； px 像素； auto 居中；
+9. div必须有内容才能显示，或者要指定长宽高
+
+#### 实例
+1. 如何把一个超链接文字扩大点击范围并隐藏起来？
+	1. 扩大范围：.logo{width,height}
+	2. 隐藏位置：text-index:-999cm
+	3. 这样子就可以实现，感觉在一张图片上面，一点就有超链接
+2. 样式可以不断地叠加.class + div
 
 ## Javascript
 
@@ -150,4 +167,54 @@ Document:浏览器对外提供一个接口，用于操作HTML
 Document和HTML区别开来，是不同的语言。
 js获取HTML的文本，存在Document对象里面，这样子js就可以通过Document操纵HTML,js写Document的内容，Document会写回HTML；
 
-都是类型 || 键值对： type  id name value + 函数 
+都是类型 || 键值对： type  id name value + 函数
+
+span无语义行内元素
+
+js的全局代码区只有一个，这样子会造成同名变量的值被覆盖 
+
+
+什么是jQuery：
+1. 是js的一个框架，本质是js
+
+jQuery的特点:
+1. 支持各种主流浏览器
+2. 使用简单
+3. 便捷的插件扩展机制
+
+闭包：用一个大的全局变量来保存局部变量的值
+window.jQuery = window.$ = jQuery
+
+返回的是只有一个对象的数组！！数组获取value的值，只能用函数val()；如果你获取的是一个对象，还是可以直接调用.value
+
+jQuery中选择器获取的是存储了HTML元素对象的数组->.val()
+jQuery获取的元素对象不能够直接使用js的内容，除非按照数组的方式取出对象： inp[0].value;
+
+attr("value")不能获得实时的数据，只能够通过uname.val()获取实时数据
+
+not a function 说明你的代码出现一定的**语法错误**
+
+## EasyUI:
+因为HTML是写错不会报错，所以！能复制就不要手写
+
+EasyUI是前端框架
+1. 封装了大量的CSS，js
+
+使用前端框架
+1. 给标签class属性
+2. data-options属性定义easyui属性
+3. 如果easyui提供的属性和HTML标签属性相同，可以把这个属性不写在data-options中
+4. 每一个效果使用纯标签方式和使用标签结合js方式
+	1. 如果效果是静态的（数据来源固定）建议使用HTML标签方式
+	2. 如果效果是动态的，建议使用HTML结合js方式
+5. 在easyui中所有脚本功能语法
+```javascript	
+//如果该效果（组件）是abc,控制abc的语法
+$("jquery 选择器获取到abc").abc({
+		属性名：值
+		事件：function
+	})
+//如果该效果（组件）是abc,控制abc方法的语法
+$("jquery 选择器获取到abc").abc("方法名")；调用方法
+&("jquery 选择器获取到abc").abc("方法名","参数");//调用方法
+```

@@ -16,15 +16,16 @@
 1. env命令（environment）：当前用户的运行环境
 
 1. gedit ./.bashrc
+
 #### 其他命令行
 
 1. man命令（Manual手册）可以使用这个命令查询其他命令的用法
 
-1. df命令（disk free）:空余硬盘
+2. df命令（disk free）:空余硬盘
 
-1. reboot命令：重启
+3. reboot命令：重启
 
-1. cat命令：cat A 用于显示A路径下文件的内容
+4. cat命令：cat A 用于显示A路径下文件的内容
 
 ### 文件操作常用命令行
 #### 创建&删除

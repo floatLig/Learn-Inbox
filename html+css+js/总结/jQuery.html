@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+///////////////////////////
+//			选择器
+///////////////////////////
+			//id选择器
+			function testId(){
+				var inp = $("#uname");
+				alert(inp.val()); //返回的一个数组，只有一个对象的数组！获取数组对象value的值，只能用函数val(),如果你想写成value的值，你可以写成inp[0].value
+			}
+			//标签选择器
+			function testEle(){
+				var inps = $("input");
+				alert(inps.length);
+			}
+			//类选择器
+			function testClass(){
+				var inps = $(".dd");
+				alert(inps.length);
+			}
+			//组合选择器，组合选择器是“选择并集”
+			function testAll(){
+				var eles = $("h3,input");
+				alert((eles.length));
+			}
+			//测试子选择器
+			function testChild(){
+				var inps = $("showdiv>input");
+				alert(inps.length);
+			}
+			//层级选择器
+			function testCj(){
+				var inp = $("input:first");
+				alert(inp.val());
+			}
+			function testCj2(){
+				var tds = $("input:not(button)");
+				alert(tds.length);
+			}
+///////////////////////////
+//			元素属性
+///////////////////////////
+			function testField(){
+				var uname = $("#uname");
+				//这里要很注意，attr("value")不能获得实时的数据，只能够通过uname.value()获取实时数据
+				alert(uname.attr("type") + ":" + uname.attr("value") + ":" + uname.val());
+			}
+			function testField2(){
+				var uname = $("#uname");
+				uname.attr("type","button");
+			}
+			function testField3(){
+				var uname = $("#uname");
+				uname.attr("type","text")
+			}
+///////////////////////////
+//			操作元素的内容
+//////////////////////////
+			function testHtml(){
+				var showdiv = $("#showdiv");
+				alert(showdiv.html());
+				showdiv.html(showdiv.html() + "我陪你去疯");
+			}
+			function testText(){
+				var showdiv = $("#showdiv");
+				alert(showdiv.text());
+			}
+			function textText2(){
+				var showdiv = $("#showdiv");
+				showdiv.text("不知道 不明了 不想要 为什么 我的心");
+			}
+///////////////////////////
+//			添加样式
+//////////////////////////
+			function testCss(){
+				var showdiv = $("#showdiv");
+				showdiv.css({"color":"mediumaquamarine","font-size":"21px"});
+			}
+			function testAddClass(){
+				var showdiv = $("#showdiv");
+				showdiv.addClass("dd");
+			}
+			function testRemoveClass(){
+				var showdiv = $("#showdiv");
+				showdiv.removeClass("dd");
+			}
+////////////////////////////
+//			文本的插入合并
+////////////////////////////
+			function testAppendTo(){
+				var div = $("#showdiv");
+				$("#u1").appendTo(div);
+			}
+			function testPrepend(){
+				var div = $("#showdiv");
+				div.prepend("(●'◡'●)");
+			}
+			function testAfter(){
+				var div = $("#showdiv");
+				div.after("<br />那些很冒险的梦，我陪你···");
+			}
+			function testBefore(){
+				var div = $("#showdiv");
+				div.before("演唱会(●ˇ∀ˇ●):")
+			}
+//////////////////////////////
+//			！！！！绑定！！！！
+/////////////////////////////
+			function testBind(){
+				$("#showdiv").bind("",function(){
+					alert("bind")
+				});
+				
+			}
+////////////////////////////
+// 			动画效果
+////////////////////////////
+			function testShow(){
+				$("#divO").show(3000);
+				$("#divB").hide(3000);
+				$("#divO").hide(3000);
+				$("#divB").show(3000);
+				$("#divG").toggle(3000);
+				$("#divO").slideDown(300);
+				$("#divB").slideUp(2000);
+				$("#divO").fadeOut(3000);
+			}
+
+		</script>
+		<style type="text/css">
+			.dd{border: dashed 2px powderblue}
+			#divO{height: 100px;background-color: orange;display: none;}
+			#divB{height: 50px;background-color: palegreen;}
+			#showdiv{margin-bottom: 10px;}
+		</style>
+	</head>
+	<body>
+		<h3>选择器</h3>
+		简单选择器：<input type="button" name="" id="" value="id选择器(text.val())" onclick="testId()"/>
+		<input type="button" name="" id="" value="标签选择器(input.length)" onclick="testEle()"/>
+		<input type="button" name="" id="" value="类选择器(class.length)" onclick="testClass()"/><br />
+		组合选择器：<input type="button" name="" id="" value="组合选择器(h3+input)" onclick="testAll()"/><br />
+		旁边元素：<input type="button" name="" id="" value="子选择器(showdiv>input)" onclick="testChild()"/>
+		<input type="button" name="" id="" value="层级选择器(input:first)" onclick="testCj()"/>
+		<input type="button" name="" id="" value="层级选择器2(input:not(button)" onclick="testCj2()"/><br />
+		获取值：<input type="button" name="" id="" value="测试id(更改text后是否能实时获取数据)" onclick="testField()"/><br />
+		替换值：<input type="button" name="" id="" value="更改(text->button)" onclick="testField2()"/>
+		<input type="button" name="" id="" value="更改(button->text)" onclick="testField3()"/><br /><br />
+		
+		修改HTML：<input type="button" name="" id="" value="获取并添加HTML内容（showdiv）" onclick="testHtml()"/>
+		<input type="button" name="" id="" value="获取文本的内容（showdiv）" onclick="testText()"/>
+		<input type="button" name="" id="" value="更改文本的内容" onclick="textText2()"/><br />
+		
+		追加、合并：<input type="button" name="" id="" value="合并(同前面的span)" onclick="testAppendTo()"/>
+		<input type="button" name="" id="" value="内容前面追加" onclick="testPrepend()"/>
+		<input type="button" name="" id="" value="外部追加（div）" onclick="testAfter()"/>
+		<input type="button" name="" id="" value="外部追加(div)" onclick="testBefore()"/><br /><br />
+		
+		动态绑定js：<input type="button" name="" id="" value="js动态添加事件" onclick="testBind()"/><br /><br />
+		
+		动画效果:<input type="button" name="" id="" value="动画效果" onclick="testShow()"/>
+		
+		<br /><br /><hr /><br />
+		
+		<input type="text" name="uname" id="uname" value="张三" /><br /><br /><br />
+		<span id="u1">
+			喔~~~~~
+		</span>
+		<div id="showdiv" style="border: solid 1px darkgreen; width: 40%; height: 100px; background-color: #dae3f3;" >
+			<b>那些你很冒险的梦</b><br />
+		</div>
+		
+		<div id="divO"></div>
+		<div id="divB"></div>
+	</body>
+</html>

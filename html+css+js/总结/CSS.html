@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+		所在前面：
+		-> 善于用class,标签（input）,id做选择器
+		-> CSS不断地叠加（div），里面地div可以修改外面地值
+		-> 可以这样子写：class=”cssClasss1, cssClass2“可以写多个===》.pr{position: relative}和其他class叠加
+		
+		-> 写CSS时，最好用缩进，有层次地写
+			
+		1、长宽：width height 可用百分比
+		2、背景+边界：border, border-radius | background-color, background-image (no-repeat),
+			background-size, background-positon
+		3、字体：font-famiay, color, font-size, font-weight,(字体位置) letter-spacing, text-align, line-height
+		4、div位置：margin, padding, position(absolution, relative, fixed):left, right, top
+		5、其他补充：list-sytlye-type, float
+		6、hover
+		-->
+		<style type="text/css">
+			.exp1{height: 40px; width: 10px;} /*注意：height,width不一定都要写上，像div，最外层的div通常写width，height由里面的补充*/
+			.exp2{border: solid 1px orange; border-radius: 10px;
+				background-image: url(img/星空动态.gif);background-size: cover; background-position: -27px -128px /*用于给特定地div/文字加背景*/;}
+			.exp3{font-family: "微软雅黑"; color: red; font-size: 16px; font-weight: bold; 
+				letter-spacing: 5px; text-align: center; line-height: 23px;}
+			.exp4{margin-left: 20px;margin-bottom: 10px;margin-top: 80p;/*//*/margin: auto 10px; /*//*/ position: relative; top: 10px;}
+			.exp5 ul li{list-style-type: none; float: left;}
+			.exp6 ul li a:hover{color: darkblue;}
+			.exp6:hover{transform: rotate(10deg) scale(1.1) 3s; /*角度变为10deg，缩放比例为1.1*/ z-index:100; /*优先级别*/}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

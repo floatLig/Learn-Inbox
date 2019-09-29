@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<title>操作表格</title>
+		<meta charset="UTF-8"/>
+		<!--
+			js操作表格学习:
+				1、删除行：
+					行对象.rowIndex//返回行对象的角标
+					表格对象.deleteRow(要删除的行对象的角标);
+				2、修改单元内容
+					单元格对象.innerHTML="新的内容";
+					行对象.cells//返回当前行所有的单元格对象的数组
+		-->
+		<!--声明css-->
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			/*设置表格居中*/
+			#ta{
+				margin: auto;
+			}
+			/*设置表格的行样式*/
+			#ta tr{
+				height: 35px;
+			}	
+		</style>
+		<!--声明js代码域-->
+		<script type="text/javascript">
+			//声明删除行
+				function delRow(btn){
+					//获取table对象
+					var ta=document.getElementById("ta");
+					//获取要删除的行对象
+					var tr=btn.parentNode.parentNode;
+					//删除行
+					ta.deleteRow(tr.rowIndex);
+				}
+			//修改功能
+				function updateRow(btn){
+					//获取单元格对象
+						//获取行对象
+						var tr=btn.parentNode.parentNode;
+						//获取行对象
+						var cell=tr.cells[3];
+					//判断cell.innerHTML的值是否是数字
+					if(!isNaN(Number(cell.innerHTML))){
+						//修改单元格内容
+						cell.innerHTML="<input type='text' value='"+cell.innerHTML+"' onblur='updateRow2(this)'/>";	
+					}
+					
+				}
+				
+				function updateRow2(inp){
+					//获取单元格对象
+					var cell=inp.parentNode;
+					//实现保存
+					cell.innerHTML=inp.value;
+				}
+/*---------------------------------------------------------------------------------*/
+		//选择删除
+			function chooseDel(){
+				//获取表格对象
+					var ta=document.getElementById("ta");
+				//获取要删除的行号
+					var chks=document.getElementsByName("chk");	
+					for(var i=1;i<chks.length;i++){
+						if(chks[i].checked){
+							//删除行
+							ta.deleteRow(i);
+							i--;
+						}
+					}
+			}
+			//添加行
+			function addRow(){
+				//获取table表格对象
+				var ta=document.getElementById("ta");
+				//添加行
+				var tr=ta.insertRow(1);
+				//添加单元格
+				var cell0=tr.insertCell(0);
+				cell0.innerHTML="<input type='checkbox' name='chk'/>";
+				var cell1=tr.insertCell(1);
+				cell1.innerHTML=document.getElementById("uname").value;
+				var cell2=tr.insertCell(2);
+				cell2.innerHTML="李思";
+				var cell3=tr.insertCell(3);
+				cell3.innerHTML="49.88";
+				var cell4=tr.insertCell(4);
+				cell4.innerHTML="5";
+				var cell5=tr.insertCell(5);
+				cell5.style.textAlign="center";
+				cell5.innerHTML="<input type='button'  value='修改数量'  onclick='updateRow(this)'/><input type='button' value='删除' onclick='delRow(this)'/>";
+				
+			}
+			//复制行
+			function copyRow(){
+				//获取表格对象
+				var ta=document.getElementById("ta");
+				//获取选择行对象
+				var chks=document.getElementsByName("chk")
+				for(var i=0;i<chks.length;i++){
+					if(chks[i].checked){
+						var tr=ta.insertRow(ta.rows.length);
+						//复制行
+						tr.innerHTML=ta.rows[i].innerHTML;
+					}
+				}	
+			}
+			//全选
+				function chooseAll(){
+					var ck=document.getElementById("ck");
+					var chks=document.getElementsByName("chk");
+					if(ck.checked){
+						for(var i=0;i<chks.length;i++){
+							chks[i].checked=true;
+						}
+					}else{
+						for(var i=0;i<chks.length;i++){
+							chks[i].checked=false;
+						}
+					}
+				}
+			//隔行变色
+			function operCss(){
+				//获取所有的行对象数组
+				var trs=document.getElementById("ta").rows;
+				//遍历
+				for(var i=0;i<trs.length;i++){
+					if(i%2==0){
+						trs[i].style.backgroundColor="red";
+					}else{
+						trs[i].style.backgroundColor="green";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3 align="center">操作表格学习</h3>
+		<input type="button" name="" id="" value="删除"  onclick="chooseDel()"/>
+		<input type="button" name="" id="" value="添加行" onclick="addRow()"/>
+		<input type="button" name="" id="" value="复制行" onclick="copyRow()"/>
+		<input type="button" name="" id="" value="隔行变色" onclick="operCss()"/>
+		书名：<input type="text" name="uname" id="uname" value="" />
+		<hr />
+			<table border="1px" id="ta">
+				<tr style="text-align: center;font-weight: bold;">
+					<td width="50px" align="left"><input type="checkbox" name="chk" value="0"  id="ck" onclick="chooseAll()"/></td>
+					<td width="200px">书名</td>
+					<td width="100px">作者</td>
+					<td width="100px">价格</td>
+					<td width="200px">购买数量</td>
+					<td width="200px" >操作</td>
+				</tr>
+				<tr id="t1">
+					<td><input type="checkbox" name="chk" id="chk" value="0" /></td>
+					<td>java从入门到放弃</td>
+					<td>wollo</td>
+					<td>43.50</td>
+					<td>3</td>
+					<td align="center">
+						<input type="button" name="" id="" value="修改数量"  onclick="updateRow(this)"/>
+						<input type="button" name="" id="" value="删除" onclick="delRow(this)"/>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="chk" id="chk" value="1" /></td>
+					<td>javaScript入门</td>
+					<td>高淇</td>
+					<td>77.60</td>
+					<td>2</td>
+					<td align="center">
+						<input type="button" name="" id="" value="修改数量" onclick="updateRow(this)"/>
+						<input type="button" name="" id="" value="删除" onclick="delRow(this)"/>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="chk" id="chk" value="2" /></td>
+					<td>Spring入门</td>
+					<td>卢俊杰</td>
+					<td>78.88</td>
+					<td>3</td>
+					<td align="center">
+						<input type="button" name="" id="" value="修改数量" onclick="updateRow(this)"/>
+						<input type="button" name="" id="" value="删除" onclick="delRow(this)"/>
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>

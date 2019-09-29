@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>模拟淘宝网</title>
+		<meta charset="UTF-8"/>
+		<!--声明js代码域-->
+		<script type="text/javascript">
+			//创建函数进行照片的联动和样式设置
+				function operInImg(img,src){
+					//设置图片的样式
+					img.style.border="solid 1px";
+					//设置大图的img路径
+						//获取大图对象
+						var big=document.getElementById("big");
+						//设置路径
+						big.src="img/"+src;
+					
+					
+				}
+			function operOutImg(img){
+				img.style.border="";
+			}
+		</script>
+		<!--声明css代码域-->
+		<style type="text/css">
+		/*设置div的样式*/
+			#showdiv{
+				width: 370px;
+				height: 400px;
+				border: solid 1px;
+				border-radius: 20px;
+			}
+		/*设置table的样式*/
+			#ta{
+				margin: auto;
+				margin-top: 10px;	
+			}
+		</style>
+	</head>
+	<body>
+		<div id="showdiv">
+			<table  width="349px" id="ta">
+				<tr height="300px">
+					<td colspan="5"><img src="img/show1_big.jpg" id="big"/></td>
+				</tr>
+				<tr height="60px">
+					<td><img src="img/show1.jpg" onmouseover="operInImg(this,'show1_big.jpg')" onmouseout="operOutImg(this)"/></td>
+					<td><img src="img/show2.jpg" onmouseover="operInImg(this,'show2_big.jpg')" onmouseout="operOutImg(this)"/></td>
+					<td><img src="img/show3.jpg" onmouseover="operInImg(this,'show3_big.jpg')" onmouseout="operOutImg(this)"/></td>
+					<td><img src="img/show4.jpg" onmouseover="operInImg(this,'show4_big.jpg')" onmouseout="operOutImg(this)"/></td>
+					<td><img src="img/show5.jpg" onmouseover="operInImg(this,'show5_big.jpg')" onmouseout="operOutImg(this)"/></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

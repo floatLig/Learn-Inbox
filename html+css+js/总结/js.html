@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js的声明</title>
+		<script type="text/javascript">
+/////////////////////////////
+//			ja基础语法
+/////////////////////////////
+
+			var a = 1 + 2;
+			var a = "a";//js中可以声明同名变量，但是后者会把前者覆盖掉
+			//alert(a);//打印结果：a
+			//alert(typeof a);//打印结果：string
+			var b;
+			//alert(b);//打印结果：undefined; 没有给变量赋初始值，默认为undefined
+		
+			console.log(bodyA);//存在变量提升
+//			打印结果：undefined
+			var bodyA = "11";
+			//----------------------
+			Number(bodyA);
+			Boolean(bodyA);
+			console.log(Number(bodyA));
+			console.log(typeof bodyA);//打印结果：还是string
+			console.log(bodyA);//打印结果：11；说明强转只有一瞬间
+//			打印结果：
+//			11
+//			string
+//			11
+			//------------------------
+			var m = 1;
+			if(m){
+				console.log("发生强制类型转化");
+			}else{
+				console.log("不发生强制类型转化");
+			}
+			//打印结果：发生强制类型转化；！注意log("")要加“”!！if会发生强制类型转化
+			switch(m){
+				case true:console.log("发生强制类型转化");break;
+				case 1:console.log("不发生强制类型转化");break;
+			}
+			//打印结果：不发生强制类型转化！！switch不发生强制类型转化
+			
+			console.log("--------基本的数据类型--------");
+			console.log("> null、underfined的典型区别为：\n> null代表“没有对象，不应该有值”，undefined代表“缺少值，此处应该有值，但还没定义”\n> 但是两者及其相似");
+			console.log("null==undefined: " + (null == undefined));
+//			打印结果：null==undefined: true
+			
+			console.log("> Number数据类型：");
+			console.log("Number.MAX_VALUE:" + Number.MAX_VALUE);
+//			打印结果：Number.MAX_VALUE:1.7976931348623157e+308
+			
+			console.log("> 一元操作符");
+			var a = "Z";//自动转Number
+			a = ++a;
+			console.log("++\"Z\":" + a);
+//			打印结果：++"Z":NaN
+			
+			console.log("> 操作符：加减乘除");
+			var a = 1 / 0;
+			console.log("1 / 0 = :" + a);
+			console.log("Infinify / Infinify = " + (Infinity / Infinity));
+			console.log("NaN + \"aaa\" = " + (NaN + "aaa" + "  //NaN会自动调用toString()方法转化为字符串“NaN”"));
+			console.log("Infinity - Infinity = " + (Infinity - Infinity) + "  //不知道哪个Infinity大，结果就为NaN");
+			console.log("undefined - 1 = " + (undefined - 1));
+//			打印结果: 
+//			1 / 0 = :Infinity
+//			Infinify / Infinify = NaN
+//			NaN + "aaa" = NaNaaa  //NaN会自动调用toString()方法转化为字符串“NaN”
+//			Infinity - Infinity = NaN  //不知道哪个Infinity大，结果就为NaN
+//			undefined - 1 = NaN
+			
+			console.log("关系操作符")
+			console.log("\"ab\" > \"aa\" = " + ("ab" > "aa") + "  //String会比较字符编码值");
+			
+			var num = "a";
+			switch(true){
+				case num < 60:
+					console.log("不及格");
+					break;
+				case num >=60:
+					console.log("及格");
+					break;
+				default:
+					console.log("输入错误");
+			}
+//			打印结果:输入错误
+			
+			console.log("------变量------");
+			var person = new Object();
+			person.name = "zzz";
+			console.log(person.name);
+			
+			function setName(obj){
+				obj.name = "beforeChange";
+				obj = new Object();
+				obj.name = "AfterChange";
+				console.log(obj.name);
+//				打印结果:zzz
+			}
+			var person = new Object();
+			setName(person);
+			console.log("person在函数外的名字：" + person.name);
+//			person在函数外的名字：beforeChange
+			
+			console.log("---instanceof：判断是不是对象---");
+			console.log(person instanceof Object);
+//			打印结果:true
+			
+			console.log("--------执行环境---------")
+			console.log("> if(true){var yyy = \"yyy\"}中,zzz不会随着if结束而结束")
+			if(true){
+				var yyy = "yyy";
+			}
+			console.log("结果为：" + yyy);
+			
+			console.log("但是在函数中，则会消失：")
+			function test(zzz){
+				if(true){
+					var zzz = "zzz";
+				}
+			}
+			var zzz;
+			test(zzz);
+			console.log("zzz的值为： " + zzz);
+//			结果为：yyy
+//			但是在函数中，则会消失：
+//			zzz的值为： undefined
+			
+			console.log("----Array()类型-----");
+			var person1 = {
+				toLocaleString : function(){
+					return "Nikolaos";
+				},
+				toString : function(){
+					return "Nicholas";
+				}
+			};
+			var person2 = {
+				toLocaleString : function(){
+					return "Grigorios";
+				},
+				toString : function(){
+					return "Greg";
+				}
+			};
+			var people = [person1,person2];
+			console.log(people.join(" || "));
+			console.log(people.toString());
+			console.log(people.toLocaleString());
+//			打印结果：
+//			Nicholas,Greg
+//			Nikolaos,Grigorios
+			
+			var colors = new Array(); // 创建一个数组
+			var count = colors.push("red", "green"); // 推入两项
+			var count = colors.push("black");
+			console.log(colors); //2
+			//打印结果为：red,green,black;
+			
+			var colors = new Array(); //创建一个数组
+			var count = colors.unshift("red", "green"); //推入两项
+			count = colors.unshift("black"); //推入另一项
+			console.log(colors); //3
+			//打印结果为：black,red,green
+			
+/////////////////////
+//			类
+////////////////////
+			
+			function Person(name,age){
+				this.name = name;//当前对象自动生成了name属性，将name属性赋值为外界传进来的name
+				this.age = age;
+				this.test = function(a){
+					//alert(a);
+					console.log(a);
+					//return "1";
+				}
+			}
+			function User(name,ID){
+				this.name = name;
+				this.ID = ID;
+			}
+			Person.prototype.testPrototype = function(){console.log("嘿嘿")};//在类中添加新属性
+			User.prototype.TestU = function(){console.log("UUU")};
+			Person.prototype.user = new User();//相当于在person中多了一个对象属性
+			//使用类
+			var p1 = new Person();
+			console.log(p1.test(1));
+//			打印结果：
+//			1
+//			undefined
+			
+			//静态属性
+			console.log(p1.testPrototype());
+//			打印结果：
+//			嘿嘿
+//			undefined
+			
+			//继承举例
+			p1.user.TestU();//一定要写user
+//			打印结果：
+//			UUU
+			
+			console.log("--------自定义对象--------");
+			var obj = new Object();
+			obj.name = "张三";
+			
+/////////////////////////////////
+//			事件学习机制，主要看按钮
+////////////////////////////////
+			function testOnclick(){
+				alert("单击")
+			}
+			function testOndblclick(){
+				alert("双击");
+			}
+			function testOnmouseover(){
+				//alert("鼠标悬停");
+			}
+			function testOnmousemove(){
+				//alert("鼠标移动");
+			}
+			function testOnmouseout(){
+				//alert("鼠标移出");
+			}
+			function testOnkeyup(){
+				alert("键盘谈起");
+			}
+			function testOnfocus(){
+				alert("获取焦点");
+			}
+			function testOnblur(){
+				alert("失去焦点");
+			}
+			function testOnload(){
+				alert("页面加载");
+			}
+			function testOnchange(){
+				alert("值被改变")
+			}
+			
+/////////////////////////////////
+//			BOM
+/////////////////////////////////
+//			警告框
+			function testAlert(){
+				window.alert("警告框"); //window可以忽略不写
+			}
+//			确认框
+			function testConfirm(){
+				confirm("你确认要删除吗");
+			}
+//			提示框
+			function testPrompt(){
+				prompt("请输入昵称：");
+			}
+//			时间结束后执行
+			function testSetTimeout(){
+				idt = setTimeout(function tst(){//类似于多线程的执行的id号
+					alert(("定时执行"));
+				},3000)
+			}
+//			间隔执行，每隔一段时间后不断地执行
+			function testSetInterval(){
+				idi = setInterval(function tsi(){
+					alert("间隔执行");
+				},3000)
+			}
+//			清除setTimeout,需要有setTimeout()的id
+			function testClearTimeout(){
+				clearTimeout(idt);
+			}
+//			清除setInterval，需要有setInterval()的id
+			function testClearInterval(){
+				clearInterval(idi);
+			}
+//			以下是浏览器本身存在的一些按钮，的一些方法
+//			打开新的浏览器窗口
+			function testOpen(){
+				open('https://github.com/','newwindow','height=400, width=600, top=100px, left=320px');
+			}
+//			地址栏输入新的地址
+			function testLocationHerf(){
+				location.href = "https://github.com/";
+			}
+//			刷新
+			function testLocationReload(){
+				location.reload();
+			}
+//			历史记录，前进
+			function testHistoryForward(){
+				history.forward();
+			}
+//			历史记录，后退
+			function testHistoryBack(){
+				history.back();
+			}
+//			获取屏幕的尺寸
+			function testScreen(){
+				var x = screen.width;
+				var y = screen.height;
+				alert(x + ":" + y);
+			}
+//			获取浏览器的信息
+			function testBroswer(){
+				alert(navigator.userAgent);
+			}
+			
+////////////////////////
+//			DOM,就是获取元素，然后对该元素的值进行修改
+//			因为就是获取对象，并且增加修改对象的值，较为容易，所以body没有对应的举例
+////////////////////////
+//			input class id name-- 获取本身 
+			function testGetEleById(){
+				var inp = document.getElementById("uname")
+			}
+			function testGetEleByName(){
+				var favs = document.getElementsByName("fav");
+			}
+			function testGetEleByTagName(){
+				var inps = document.getElementsByTagName("input");
+			}
+			function testGetEleByClassName(){
+				var inps = document.getElementsByClassName("common");
+			}
+//			获取周围
+			//获取孩子
+			function testParent(){
+				var showdiv = document.getElementById("showdiv");
+				var childs = showdiv.childNodes;//是一个数组
+				alert(childs.length);
+			}
+			//获取父亲
+			function testChild(){
+				var inp = document.getElementById("inp");
+				var div = inp.parentNode;
+				alert(div);
+			}
+			//获取兄弟
+			function testBrother(){
+				var inp = document.getElementById("inp");
+				var perEle = inp.previousSibling;//弟获取兄
+				var nextEle = inp.nextSibling;//兄获取弟
+				alert(perEle + "--" + nextEle);
+			}
+			//获取其他属性，但是不一定能够全部获取的到
+			function testField(){
+				var inp = document.getElementById("uname");
+				alert("type:" + inp.type + " name:" + inp.name + " id:" + inp.id + " value:" + inp.value);
+			}
+			//获取其他属性：全能能够获取得到
+			function testOwnField(){
+				var inp = document.getElementById("uname");
+				alert(inp.getAttribute("abc"));
+			}
+			//修改属性的值
+			function testFieldModify(){
+				var inp = document.getElementById("uname");
+				inp.type = "button";
+			}
+			//修改属性的值，能够修改全部
+			function testOwnFieldModify(){
+				var inp = document.getElementById("uname");
+				inp.setAttribute("abc","叮咚叮咚");
+			}
+			//操作元素内容和样式
+			function getContext(){
+				var div = document.getElementById("showdiv");
+				alert(div.innerHTML);
+				alert(div.innerText);//获取文本，不获取HTML
+			}
+//			HTML，CSS获取和更新
+			//更新内容
+			function updateContext(){
+				var div = document.getElementById("showdiv");
+				div.innerHTML = div.innerHTML + "<b>修改修改</b>";
+			}
+			//修改CSS
+			function updateAddCss(){
+				var showdiv = document.getElementById("showdiv");
+				showdiv.style.backgroundColor = "orange";
+			}
+			//增加类
+			function testOperCss(){
+				var button = document.getElementById("btn");
+				button.className - "commmon"; //也是操纵属性：className的属性
+			}
+			
+//			实例：
+			function testAdd(){
+				var showdiv = document.getElementById("showdiv");
+				
+				var inp = document.createElement("input");
+				inp.type = "file";
+				var btn = document.createElement("input");
+				btn.type = "button";
+				btn.value = "删除";
+				var br = document.createElement("br")
+				btn.onclick = function(){
+					showdiv.removeChild(inp);
+					showdiv.removeChild(btn);
+					showdiv.removeChild(br);
+				}
+				
+				showdiv.appendChild(inp);
+				showdiv.appendChild(btn);
+				showdiv.appendChild(br);
+			}
+			
+//			event:获取键盘和鼠标的对象
+			var img = document.createElement("img");
+			img.src = "img/wdfj.gif";
+			
+			function planemove(event){
+				
+				var eve = event || window.event;
+				//获取坐标
+				var x = eve.clientX ;
+				var y = eve.clientY ;
+				
+				//动态修改飞机的位置
+				img.style.left = x + "px";
+				img.style.top = y + "px";
+				
+			}
+			document.addEventListener("mousemove",planemove,true);
+			
+			
+		</script>
+	</head>
+	<body>
+		<h3>事件学习机制</h3>
+		<input type="button" name="" id="" value="单击点我" onclick="testOnclick()"/>
+		<input type="button" name="" id="" value="双击点我" ondblclick="testOndblclick()"/><br /><br />
+		<input type="text" name="" id="" value="键盘弹起/失去焦点试一下" onkeyup="testOnkeyup()" onblur="testOnblur()"/><br />
+		<div id="">
+			<select name="" onchange="testOnchange()">
+				<option value="">更改值试一下</option>
+				<option value="">滴答滴答</option>
+				<option value="">叮咚叮咚</option>
+			</select>
+		</div>
+			
+		<h3>BOM</h3>
+		<input type="button" name="" id="" value="警告框" onclick="testAlert()"/>
+		<input type="button" name="" id="" value="确认框" onclick="testConfirm()"/>
+		<input type="button" name="" id="" value="输入框" onclick="testPrompt()"/><br /><br />
+		<input type="button" name="" id="" value="定时执行" onclick="testSetTimeout()"/>
+		<input type="button" name="" id="" value="间隔执行" onclick="testSetInterval()" /><br />
+		<input type="button" name="" id="" value="停止定时执行" onclick="testClearTimeout()" />
+		<input type="button" name="" id="" value="停止间隔执行" onclick="testClearInterval()"/><br /><br />
+		<input type="button" name="" id="" value="打开新的窗口" onclick="testOpen()"/><br />
+		<input type="button" name="" id="" value="地址栏加载新的URL" onclick="testLocationHerf()"/>
+		<input type="button" name="" id="" value="地址栏刷新" onclick="testLocationReload()"/><br />
+		<input type="button" name="" id="" value="前进" onclick="testHistoryForward()"/>
+		<input type="button" name="" id="" value="后退" onclick="testHistoryBack()"/><br /><br />
+		<input type="button" name="" id="" value="获取屏幕分辨率" onclick="testScreen()"/>
+		<input type="button" name="" id="" value="获取浏览器信息" onclick="testBroswer()"/>
+		
+		<h3>DOM</h3>
+		<input type="button" name="" id="" value="继续上传" onclick="testAdd()"/>
+		<div id="showdiv">
+			
+		</div>
+		
+		<h4>飞机</h4>
+		<img src="img/wdfj.gif" id="plane" style="position: absolute; top:100px; left:  100px;"/>
+		
+		
+		<h3>其他</h3>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!--关键字、描述、作者-->
+		<meta name="keywords" content="HTML,复习,基础"/>
+		<meta name="description" content="总结HTML学习到的知识"/> 
+		<meta name="author" content="zzl"/>
+		
+		<title>对HTML的知识做一个总结</title>
+	</head>
+	<body>
+		<!--HTML类似于Markdown，所以是挺简单的-->
+		
+		<!--目录->锚点：超链接+#-->
+		<h4>目录</h3>
+		<a href="#序号">序号</a><br />
+		<a href="#fav">图片</a><br />
+		<a href="#表格">表格</a><br />
+		<a href="#form表单">form表单</a><br />
+		<a href="#span">span</a><br />
+		
+		
+		<!--分隔符-->
+		<hr /> 
+		
+		<!--序号-->
+		<h3>序号</h3>
+		<a name="序号"></a> <!--超链接-->
+		<h4>无序号</h3>
+		<ul>
+			<li>无序号1</li>
+			<li>无序号2</li>
+		</ul>
+		<h4>有序号</h3>
+		<ol type="A">
+			<li>有序号A</li>
+			<li>有序号B</li>
+		</ol>
+		<h4>紧凑序号</h3>
+		<dl>
+			<dt>紧凑序号</dt>
+			<dd>紧凑1</dd>
+			<dd>紧凑2</dd>
+		</dl>
+		
+		<!--图片-->
+		<a name="图片标签"></a> <!--页内跳转-->
+		<h3>图片</h3>
+		<img src="img/星空动态.gif" alt="图片加载不出来显示的文字" title="鼠标悬停加载的文字"/>
+		
+		<!--表格-->
+		<a name="表格"></a>
+		<h3>表格</h3>
+		<table border="1px" cellspacing="0px" cellpadding="7px">
+			<tr>
+				<th>标题1</th>
+				<th>标题2</th>
+				<th>标题3</th>
+			</tr>
+			<tr>
+				<td>内容1</td>
+				<td>内容2</td>
+				<td>内容3</td>
+			</tr>
+			<tr>
+				<td rowspan="2">合并1</td>
+				<td colspan="2">合并2</td>
+			</tr>
+			<tr>
+				<td>内容A</td>
+				<td>内容B</td>
+			</tr>
+		</table>
+		
+		<!--表单+表格-->
+		<a name="form表单"></a>
+		<h3>form表单</h3>
+		<form action="https://www.baidu.com" method="get">
+			<table border="1px" cellspacing="0px" cellpadding="7px">
+				<tr>
+					<td>百度搜索</td>
+					<td>
+						<input type="text" name="q" id="q" value="" />
+					</td>
+				</tr>
+				<tr>
+					<td>radio选择框</td>
+					<td>
+						男<input type="radio" name="sex" id="sex" value="1" />
+						女<input type="radio" name="sex" id="sex" value="2" />
+					</td>
+				</tr>
+				<tr>
+					<td>checkbox选择框</td>
+					<td>
+						<input type="checkbox" name="fav" id="fav" value="0" />打篮球
+						<input type="checkbox" name="fav" id="fav" value="1" />唱歌
+						<input type="checkbox" name="fav" id="fav" value="2" />学习
+					</td>
+				</tr>
+				<tr>
+					<td>下拉框</td>
+					<td>
+						<select name="address">
+							<option value="0">--请选择--</option>
+							<option value="1">刀剑神域</option>
+							<option value="2">狐妖小红娘</option>
+							<option value="3">夏目友人帐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>文本域</td>
+					<td>
+						<textarea name="intro" rows="5px" cols="21px"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>登录按钮</td>
+					<td align="center"><input type="submit" value="登录按钮"/></td>
+				</tr>
+			</table>
+		</form>
+		
+		<h3>span</h3>
+		<a name="span"></a>
+		<sapn>id:唯一标识</sapn>
+		<br /> <!--换行-->
+		<span>name:不能重命名，且与服务器需要用到name</span>
+		<br /> <!--换行-->
+		<span>span可以加样式，可以用js</span>
+	</body>
+</html>
